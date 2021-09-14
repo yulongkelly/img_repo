@@ -1,0 +1,17 @@
+{% extends 'base.html' %} {% block content %}
+
+<h1>Search</h1>
+<form method="GET">
+  <div>
+    <label for="imgName">Name:</label>
+    <input type="text" id="imgName" name="imgName" placeholder="Image Name" />
+  </div>
+  <input type="submit" value="Search" />
+</form>
+{% if not img %}
+     <p>No image with this name</p>           
+{% endif %}
+{% for i in img %}
+                <img src="{{media_url}}{{ i.upload }}">
+{% endfor %}
+{% endblock %}

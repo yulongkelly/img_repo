@@ -15,10 +15,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf import settings
+from django.conf.urls.static import static
 
-from images.views import image_create_view
+from images.views import image_create_view, image_detail_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', image_create_view)
+    path('create/', image_create_view),
+    path('search/', image_detail_view),
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
