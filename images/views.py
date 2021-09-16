@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.http import HttpResponseRedirect
 from django.conf import settings
 
 from .models import Image
@@ -10,10 +11,17 @@ def image_create_view(request):
     return render(request, "image_create.html")
 
 def image_detail_view(request):
-    img = Image.objects.filter(name=request.GET.get('imgName'))
+    image_name = request.GET.get('imgName')
+    if not image_name:
+        img = Image.objects.all()
+    else:
+        img = Image.objects.filter(name=request.GET.get('imgName'))
     context = {
         "media_url": settings.MEDIA_URL,
         "img": img
     }
     return render(request, "image_detail.html", context)
-        
+
+def image_delete_view(request):
+     Image.objects.all().delete()
+     return HttpResponseRedirect("/")

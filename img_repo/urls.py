@@ -18,12 +18,13 @@ from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
 
-from images.views import image_create_view, image_detail_view
+from images.views import image_create_view, image_detail_view, image_delete_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('delete/', image_delete_view),
     path('create/', image_create_view),
-    path('search/', image_detail_view),
+    path('', image_detail_view),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

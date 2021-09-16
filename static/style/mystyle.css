@@ -1,0 +1,19 @@
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#showImages {
+    display: flex;
+}
+
+#showImages div {
+    margin-right: 5px;
+}
+
+img {
+    width: 200px;
+    height: 200px;
+    object-fit: scale-down;
+}
