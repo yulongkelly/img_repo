@@ -4,7 +4,28 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-django = "*"
+asgiref= "*"
+attrs = "*"
+coverage="*"
+Django = "*"
+Faker = "*"
+iniconfig = "*"
+mixer = "*"
+packaging = "*"
+Pillow = "*"
+pluggy = "*"
+py = "*"
+pyparsing = "*"
+pytest = "*"
+pytest-cov = "*"
+pytest-django = "*"
+pytest-snapshot = "*"
+python-dateutil = "*"
+pytz = "*"
+six = "*"
+sqlparse = "*"
+text-unidecode = "*"
+toml = "*"
 
 [dev-packages]
 
