@@ -4,6 +4,7 @@ Create, Search, Delete
 ## Set Up
 ```
 pipenv shell
+pipenv install
 python manage.py runserver
 ```
 # Run test
