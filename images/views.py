@@ -13,7 +13,7 @@ def image_create_view(request):
 def image_detail_view(request):
     image_name = request.GET.get('imgName')
     if not image_name:
-        img = Image.objects.all()
+        img = Image.objects.all().order_by('name')
     else:
         img = Image.objects.filter(name=request.GET.get('imgName'))
     context = {

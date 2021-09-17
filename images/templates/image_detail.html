@@ -1,28 +1,26 @@
 {% extends 'base.html' %} {% block content %}
 
 <div id="header">
-<h1>Images</h1>
-<form method="GET">
+  <h1>Images</h1>
+  <form method="GET">
     <label for="imgName">Name:</label>
     <input type="text" id="imgName" name="imgName" placeholder="Image Name" />
-  <input type="submit" value="Search" />
-</form>
+    <input type="submit" value="Search" />
+  </form>
 </div>
 <hr />
 {% if img %}
-<form
-      action="/delete/"
-      method="POST"
-      enctype="multipart/form-data"
-    >
-    {% csrf_token %}
-    <input type="submit" value="Delete all" />
-    </form>
-{%endif%}
-{% if request.GET.imgName and not img %}
-<p>No image with name <strong>{{request.GET.imgName}}</strong> <a href="/create">upload</a></p>
-{%endif%} 
-{% if not request.GET.imgName and not img %}
+<a href="/create">upload</a>
+<form action="/delete/" method="POST" enctype="multipart/form-data">
+  {% csrf_token %}
+  <input type="submit" value="Delete all" />
+</form>
+{%endif%} {% if request.GET.imgName and not img %}
+<p>
+  No image with name <strong>{{request.GET.imgName}}</strong>
+  <a href="/create">upload</a>
+</p>
+{%endif%} {% if not request.GET.imgName and not img %}
 <p>No Images. Feel free to <a href="/create">upload</a></p>
 {%endif%}
 <div id="showImages">

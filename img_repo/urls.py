@@ -22,9 +22,9 @@ from images.views import image_create_view, image_detail_view, image_delete_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('delete/', image_delete_view),
-    path('create/', image_create_view),
-    path('', image_detail_view),
+    path('delete/', image_delete_view, name='mydeleteview'),
+    path('create/', image_create_view, name='mycreateview'),
+    path('', image_detail_view, name='mydetailview'),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
