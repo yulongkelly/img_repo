@@ -3,7 +3,7 @@
 Create, Search, Delete
 ## Set Up
 ```
-git clone git@github.com:yulongkelly/img_repo.git
+git clone https://github.com/yulongkelly/img_repo.git
 cd img_repo
 pip install -r requirements.txt
 python3 manage.py runserver
