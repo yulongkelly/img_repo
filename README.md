@@ -3,8 +3,10 @@
 Create, Search, Delete
 ## Set Up
 ```
-pipenv shell
-python manage.py runserver
+git clone https://github.com/yulongkelly/img_repo.git
+cd img_repo
+pip install -r requirements.txt
+python3 manage.py runserver
 ```
 # Run test
 ```
